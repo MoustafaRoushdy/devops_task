@@ -1,0 +1,34 @@
+version: '3.8'
+services:
+  app:
+    build: .
+    container_name: app_container
+    ports:
+      - "5000:5000"
+    depends_on:
+      - mongo
+    environment:
+      MONGO_URI: mongodb://${MONGO_INITDB_ROOT_USERNAME}:${MONGO_INITDB_ROOT_PASSWORD}@mongo:27017/admin
+      
+    networks:
+      - app-network
+
+  mongo:
+    image: mongo
+    container_name: mongo_container
+    volumes:
+      - mongo-data:/data/db
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
+    networks:
+      - app-network
+
+volumes:
+  mongo-data:
+
+networks:
+  app-network:
+
