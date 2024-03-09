@@ -23,6 +23,8 @@ prometheus:
   image: "prom/prometheus"
   tag: "latest"
   port: 9090
+  service:
+    nodePort: 30090
   configMap:
     enabled: true
 

@@ -5,10 +5,11 @@ metadata:
   labels:
     {{- include "devops_app.labels" . | nindent 4 }}
 spec:
-  type: ClusterIP
+  type: NodePort
   ports:
     - port: 9090
       targetPort: 9090
+      nodePort: {{ .Values.prometheus.service.nodePort }}
       protocol: TCP
       name: http
   selector:
