@@ -3,8 +3,12 @@ app:
   image: "moustafaroushdy/app"
   tag: "latest"
   port: 5000
+  service:
+    internalPort: 80
+    nodePort: 30007
   environment:
     MONGO_URI: "mongodb://mongo:27017/admin"
+
 
 # Values for MongoDB
 mongo:

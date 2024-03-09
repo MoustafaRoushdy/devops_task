@@ -5,9 +5,10 @@ metadata:
   labels:
     {{- include "devops_app.labels" . | nindent 4 }}
 spec:
-  type: ClusterIP
+  type: NodePort
   ports:
-    - port: {{ .Values.app.port }}
+    - port: {{ .Values.app.service.internalPort }}
       targetPort: {{ .Values.app.port }}
+      nodePort: {{ .Values.app.service.nodePort }}
   selector:
-    app: {{ include "devops_app.name" . }}-app
+    app: {{ include "devops_app.name" . }}
