@@ -2,9 +2,14 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: grafana-pvc
+  labels:
+    type: grafana-local
 spec:
   accessModes:
     - ReadWriteOnce
   resources:
     requests:
       storage: 1Gi
+  selector:
+    matchLabels:
+      type: grafana-local
