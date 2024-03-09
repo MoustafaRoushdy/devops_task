@@ -5,6 +5,7 @@ metadata:
   labels:
     type: grafana-local
 spec:
+  storageClassName: manual
   accessModes:
     - ReadWriteOnce
   resources:
