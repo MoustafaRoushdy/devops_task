@@ -32,4 +32,4 @@ spec:
       volumes:
         - name: config-volume
           configMap:
-            name: {{ include "devops_app.fullname" . }}-prometheus-config
+            name: {{ include "devops_app.fullname" . }}-prometheus
