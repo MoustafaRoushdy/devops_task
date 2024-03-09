@@ -1,7 +1,6 @@
 pipeline:
-  agent: any
   stages:
-    - stage: Hello
+    - stage: "Stage1"
       steps:
-        - script: echo 'Hello World'
-
+        script: |
+          sh 'docker build -t moustafaroushdy/app .'
