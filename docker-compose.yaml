@@ -13,7 +13,7 @@ services:
       - app-network
 
   mongo:
-    image: mongo
+    image: mongo:7.0
     container_name: mongo_container
     volumes:
       - mongo-data:/data/db
@@ -26,7 +26,7 @@ services:
       - app-network
       
   prometheus:
-    image: prom/prometheus
+    image: prom/prometheus:v2.50.1
     container_name: prometheus_container
     volumes:
       - ./prometheus:/etc/prometheus
@@ -40,7 +40,7 @@ services:
       - mongo
       
   grafana:
-    image: grafana/grafana
+    image: grafana/grafana:10.0.12
     container_name: grafana_container
     volumes:
       - grafana_data:/var/lib/grafana

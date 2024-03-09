@@ -16,4 +16,4 @@ EXPOSE 5000
 RUN useradd -m myuser
 USER myuser
 
-CMD ["python", "app.py"
+CMD ["python", "app.py"]
