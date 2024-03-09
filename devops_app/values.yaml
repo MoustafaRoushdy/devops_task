@@ -1,6 +1,6 @@
 # Values for  application
 app:
-  image: "devops_task_app"
+  image: "moustafaroushdy/app"
   tag: "latest"
   port: 5000
   environment:
