@@ -34,7 +34,7 @@ grafana:
   tag: "latest"
   port: 3000
   service:
-    nodePort: 30090
+    nodePort: 30030
   adminPassword: "admin"
 
 # Persistent Volume Claims
