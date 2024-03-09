@@ -11,4 +11,4 @@ spec:
       targetPort: {{ .Values.app.port }}
       nodePort: {{ .Values.app.service.nodePort }}
   selector:
-    app: {{ include "devops_app.name" . }}
+    app: {{ include "devops_app.name" . }}-app
