@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "devops_app.fullname" . }}-mongo
+  labels:
+    {{- include "devops_app.labels" . | nindent 4 }}
+spec:
+  type: ClusterIP
+  ports:
+    - port: 27017
+      targetPort: 27017
+  selector:
+    app: {{ include "devops_app.name" . }}-mongo
