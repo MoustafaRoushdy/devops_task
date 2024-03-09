@@ -21,4 +21,4 @@ spec:
             - containerPort: {{ .Values.app.port }}
           env:
             - name: MONGO_URI
-              value: mongodb://{{ .Values.mongo.mongoRootUsername }}:$(MONGO_ROOT_PASSWORD)}@{{ include "devops_app.fullname" . }}-mongo:27017/admin
+              value: "mongodb://{{ .Values.mongo.mongoRootUsername }}:{{ .Values.mongo.mongoRootPassword }}@{{ include "devops_app.fullname" . }}-mongo:27017/admin"
